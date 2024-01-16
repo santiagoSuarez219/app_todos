@@ -4,13 +4,17 @@ import { useLocalStorage } from "./useLocalStorage";
 const ToDoContext = createContext();
 
 const ToDoProvider = ({ children }) => {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const {
     item: toDos,
     saveItem: saveTodos,
     loading,
     error,
   } = useLocalStorage("TODOS_V1", []);
+  const [searchValue, setSearchValue] = useState("");
+
+  const completedToDos = toDos.filter((toDo) => toDo.completed).length;
+  const totalToDos = toDos.length;
 
   const addToDo = (text) => {
     const newToDos = [...toDos];
@@ -35,6 +39,12 @@ const ToDoProvider = ({ children }) => {
     saveTodos(newToDos);
   };
 
+  const searchedToDos = toDos.filter((toDo) => {
+    const toDoText = toDo.text.toLowerCase();
+    const searchText = searchValue.toLowerCase();
+    return toDoText.includes(searchText);
+  });
+
   return (
     <ToDoContext.Provider
       value={{
@@ -44,6 +54,13 @@ const ToDoProvider = ({ children }) => {
         setOpenModal,
         deleteToDo,
         completeToDo,
+        completedToDos,
+        totalToDos,
+        loading,
+        error,
+        searchValue,
+        setSearchValue,
+        searchedToDos,
       }}
     >
       {children}

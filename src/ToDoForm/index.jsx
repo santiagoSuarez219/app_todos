@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { ToDoContext } from "../ToDoContext";
+import "./ToDoForm.css";
 
 const ToDoForm = () => {
   const { setOpenModal, addToDo, toDos } = useContext(ToDoContext);
@@ -17,13 +18,13 @@ const ToDoForm = () => {
   };
 
   const buttonsStyles =
-    "cursor-pointer text-xl text-[#202329] font-normal h-12 w-[120px] rounded-sm";
+    "to-do-button cursor-pointer text-xl text-[#202329] font-normal h-12 rounded-sm";
   return (
     <form
       onSubmit={onSubmit}
-      className="w-11/12 max-w-80 bg-white py-8 px-10 flex flex-col justify-center items-center "
+      className="w-full max-w-96 bg-white py-8 px-10 flex flex-col justify-center items-center "
     >
-      <label className="text-center font-bold text-xl text-[#1E1E1F] mb-6">
+      <label className="w-full text-center font-bold text-xl text-[#1E1E1F] mb-6">
         Escribe tu nuevo ToDo
       </label>
       <textarea
@@ -32,10 +33,10 @@ const ToDoForm = () => {
         onChange={onChange}
         className="bg-[#F9FBFC] w-full border-2 border-[#202329] rounded-sm drop-shadow-[32px_35px_41px_rgba(32,35,41,0.25)] text-[#1E1E1F] text-xl text-center p-3 h-24 placeholder:text-[#A5A5A5] placeholder:font-normal focus:outline-[#61DAFA]"
       />
-      <div className="mt-4 flex justify-between items-center w-full">
+      <div className="mt-4 flex items-center w-full">
         <button
           type="button"
-          className={`${buttonsStyles} bg-transparent`}
+          className={`${buttonsStyles} bg-transparent mr-2`}
           onClick={onCancel}
         >
           Cancelar
