@@ -1,5 +1,4 @@
 import { ToDoProvider } from "../ToDoContext";
-import "./App.css";
 import AppUI from "./AppUI";
 
 const App = () => {
