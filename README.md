@@ -50,7 +50,7 @@ npm run dev
 4. Puedes marcar una tarea como completada haciendo click en el icono que se encuentra ubicado en la parte izquierda de cada tarea. Puedes observar que despues de marcar la tarea como completada, la descripcion de la tarea aparecera tachada y el color de los iconos cambiara.
 5. Puedes eliminar una tarea haciendo click en el icono ubicado en la parte superior derecha de cada tarea.
 
-Puedes acceder a la aplicacion en linea [aqui] (https://app-todos-l7c2u3s6m-santiago-suarez-cortes-projects.vercel.app)
+Puedes acceder a la aplicacion en linea [aqui](https://app-todos-l7c2u3s6m-santiago-suarez-cortes-projects.vercel.app)
 
 ## Authors
 
